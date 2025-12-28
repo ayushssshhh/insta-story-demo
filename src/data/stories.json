@@ -1,0 +1,98 @@
+[
+  {
+    "id": "u1",
+    "username": "alex_adventures",
+    "avatar": "https://picsum.photos/id/64/200/200",
+    "stories": [
+      { "id": "s1-1", "url": "https://picsum.photos/id/10/1080/1920" },
+      { "id": "s1-2", "url": "https://picsum.photos/id/11/1080/1920" },
+      { "id": "s1-3", "url": "https://picsum.photos/id/12/1080/1920" }
+    ]
+  },
+  {
+    "id": "u2",
+    "username": "design_daily",
+    "avatar": "https://picsum.photos/id/82/200/200",
+    "stories": [
+      { "id": "s2-1", "url": "https://picsum.photos/id/20/1080/1920" },
+      { "id": "s2-2", "url": "https://picsum.photos/id/21/1080/1920" }
+    ]
+  },
+  {
+    "id": "u3",
+    "username": "nature_geo",
+    "avatar": "https://picsum.photos/id/103/200/200",
+    "stories": [
+      { "id": "s3-1", "url": "https://picsum.photos/id/30/1080/1920" },
+      { "id": "s3-2", "url": "https://picsum.photos/id/31/1080/1920" },
+      { "id": "s3-3", "url": "https://picsum.photos/id/32/1080/1920" },
+      { "id": "s3-4", "url": "https://picsum.photos/id/33/1080/1920" }
+    ]
+  },
+  {
+    "id": "u4",
+    "username": "tech_minimalist",
+    "avatar": "https://picsum.photos/id/160/200/200",
+    "stories": [
+      { "id": "s4-1", "url": "https://picsum.photos/id/40/1080/1920" },
+      { "id": "s4-2", "url": "https://picsum.photos/id/41/1080/1920" }
+    ]
+  },
+  {
+    "id": "u5",
+    "username": "urban_explorer",
+    "avatar": "https://picsum.photos/id/177/200/200",
+    "stories": [
+      { "id": "s5-1", "url": "https://picsum.photos/id/50/1080/1920" },
+      { "id": "s5-2", "url": "https://picsum.photos/id/51/1080/1920" },
+      { "id": "s5-3", "url": "https://picsum.photos/id/52/1080/1920" }
+    ]
+  },
+  {
+    "id": "u6",
+    "username": "chef_mario",
+    "avatar": "https://picsum.photos/id/225/200/200",
+    "stories": [
+      { "id": "s6-1", "url": "https://picsum.photos/id/60/1080/1920" },
+      { "id": "s6-2", "url": "https://picsum.photos/id/61/1080/1920" }
+    ]
+  },
+  {
+    "id": "u7",
+    "username": "fitness_flow",
+    "avatar": "https://picsum.photos/id/338/200/200",
+    "stories": [
+      { "id": "s7-1", "url": "https://picsum.photos/id/70/1080/1920" },
+      { "id": "s7-2", "url": "https://picsum.photos/id/71/1080/1920" },
+      { "id": "s7-3", "url": "https://picsum.photos/id/72/1080/1920" }
+    ]
+  },
+  {
+    "id": "u8",
+    "username": "travel_bug",
+    "avatar": "https://picsum.photos/id/342/200/200",
+    "stories": [
+      { "id": "s8-1", "url": "https://picsum.photos/id/80/1080/1920" },
+      { "id": "s8-2", "url": "https://picsum.photos/id/81/1080/1920" }
+    ]
+  },
+  {
+    "id": "u9",
+    "username": "cozy_interiors",
+    "avatar": "https://picsum.photos/id/445/200/200",
+    "stories": [
+      { "id": "s9-1", "url": "https://picsum.photos/id/90/1080/1920" },
+      { "id": "s9-2", "url": "https://picsum.photos/id/91/1080/1920" },
+      { "id": "s9-3", "url": "https://picsum.photos/id/92/1080/1920" }
+    ]
+  },
+  {
+    "id": "u10",
+    "username": "midnight_city",
+    "avatar": "https://picsum.photos/id/524/200/200",
+    "stories": [
+      { "id": "s10-1", "url": "https://picsum.photos/id/100/1080/1920" },
+      { "id": "s10-2", "url": "https://picsum.photos/id/101/1080/1920" }
+    ]
+  }
+]
