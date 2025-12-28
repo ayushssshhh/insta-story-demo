@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# 📸 Instagram Stories Clone
+A high-performance, mobile-first Instagram Stories clone built with React, TypeScript, and Framer Motion. This project features a dynamic sorting system, intelligent navigation boundaries, and optimized media handling for large datasets.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 Key Features
+1. Dynamic Story Tray & Smart Sorting
+The tray automatically prioritizes content. Unviewed stories appear at the beginning with the iconic gradient ring. Once viewed, users are moved to the end of the list with a muted, grayscale style.
 
-Currently, two official plugins are available:
+Performance: Uses useMemo for sorting to ensure smooth UI updates even with 50+ users.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Animations: Powered by Framer Motion's layout prop for fluid re-ordering.
 
-## React Compiler
+2. Intelligent Navigation
+ID-Based Sticky Selection: Navigates via User IDs rather than array indexes to prevent "jumping" when the list re-sorts in the background.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Boundary Detection: The viewer automatically closes when you reach the end of your "New Stories" to prevent looping into content you've already seen.
 
-## Expanding the ESLint configuration
+Auto-Advance: 5-second timer per story with a watchdog timeout that skips broken or slow-loading media.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. Media Optimization
+Lazy Loading: Tray avatars use native lazy loading to save bandwidth.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Pre-fetching: The viewer silently pre-loads the next story in the background for zero-latency transitions.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Gated Progress: The progress bar is synchronized with the media's onLoad event—timer and progress only start once the media is actually visible.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# 🛠️ Tech Stack
+Framework: React 18
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Language: TypeScript
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Animation: Framer Motion
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Styling: Tailwind CSS
+
+Icons: Lucide React
+
+Deployment: Vercel
+
+# 📖 Coding Logic Highlights
+The Watchdog Timer
+To prevent the app from hanging on a spinner, we implemented a 5-second watchdog:
+
+TypeScript
+
+useEffect(() => {
+  const loadTimeout = setTimeout(() => {
+    if (status === 'loading') setStatus('error');
+  }, 5000);
+  return () => clearTimeout(loadTimeout);
+}, [storyIndex]);
+Pointer-Events Overlay
+To ensure users can always navigate (even when an error message is showing), we used a layered Z-index approach:
+
+Nav Layer (Z-105): Invisible but spans the screen to catch clicks.
+
+Error Layer (Z-50): Uses pointer-events: none so clicks "fall through" to the Nav Layer, while the "Retry" button uses pointer-events: auto.
+
+# 📦 Installation & Setup
+Clone the repo:
+
+`git clone https://github.com/your-username/ig-stories-clone.git`
+
+Install dependencies:
+
+`npm install`
+
+Run the development server:
+
+
+`npm run dev`
+
+Build for production:
+
+`npm run build`
